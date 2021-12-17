@@ -5,6 +5,7 @@
 #include <Texture/Texture.h>
 #include <TextureManager/TextureManager.h>
 #include <Components/TextureComponent/TextureComponent.h> 
+#include <Components/TransformComponent/TransformComponent.h>
 
 #include <string>
 
@@ -23,6 +24,8 @@ public:
 		TextureManager::GetInstance()->AddTexture("Michael", new Texture{ "Resources/Michael_SoyakPoint2.png" });
 
 		m_pGameObject->AddComponent(new TextureComponent{ m_pGameObject, TextureManager::GetInstance()->GetTexture("Michael") });
+		m_pGameObject->pTransform->SetScale(Point2f{ 0.5f, 0.5f });
+
 
 		AddGameObject("Michael", m_pGameObject);
 	}
