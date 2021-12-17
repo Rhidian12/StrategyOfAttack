@@ -7,9 +7,11 @@
 
 int main()
 {
-    Integrian2D::Core* pEngine{ Integrian2D::Core::CreateEngine(640, 480, "StrategyOfAttack") };
+    using namespace Integrian2D;
 
-    Integrian2D::SceneManager::GetInstance()->AddScene(new TestScene{ "TestScene" });
+    Core* pEngine{ Core::CreateEngine(640, 480, "StrategyOfAttack") };
+
+    SceneManager::GetInstance()->AddScene(new TestScene{ "TestScene" });
 
     pEngine->Run();
 
