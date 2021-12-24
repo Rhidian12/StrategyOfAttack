@@ -2,7 +2,6 @@
 
 #include <Scene/Scene.h>
 
-#include <vector>
 #include <string>
 
 class MainLevel final : public Integrian2D::Scene
