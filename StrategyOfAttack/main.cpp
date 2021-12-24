@@ -3,7 +3,7 @@
 #include <Core/Core.h>
 #include <SceneManager/SceneManager.h>
 
-#include "TestScene.h"
+#include "Scenes/MainLevel/MainLevel.h"
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
 
     Core* pEngine{ Core::CreateEngine(1080, 720, "StrategyOfAttack") };
 
-    SceneManager::GetInstance()->AddScene(new TestScene{ "TestScene" });
+    SceneManager::GetInstance()->AddScene(new MainLevel{ "MainLevel" });
 
     pEngine->Run();
 
