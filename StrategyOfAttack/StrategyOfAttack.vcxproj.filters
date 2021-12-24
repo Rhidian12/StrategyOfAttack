@@ -18,10 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainLevel\MainLevel.cpp">
+    <ClCompile Include="Scenes\MainLevel\MainLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TileComponent\TileComponent.cpp">
+    <ClCompile Include="Components\TileComponent\TileComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +29,10 @@
     <ClInclude Include="TestScene.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainLevel\MainLevel.h">
+    <ClInclude Include="Scenes\MainLevel\MainLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TileComponent\TileComponent.h">
+    <ClInclude Include="Components\TileComponent\TileComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -184,13 +184,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainLevel\MainLevel.cpp" />
-    <ClCompile Include="TileComponent\TileComponent.cpp" />
+    <ClCompile Include="Scenes\MainLevel\MainLevel.cpp" />
+    <ClCompile Include="Components\TileComponent\TileComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainLevel\MainLevel.h" />
+    <ClInclude Include="Scenes\MainLevel\MainLevel.h" />
     <ClInclude Include="TestScene.h" />
-    <ClInclude Include="TileComponent\TileComponent.h" />
+    <ClInclude Include="Components\TileComponent\TileComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
