@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Components/Component/Component.h>
-#include <Math/TypeDefines.h>
 
 enum class TileMobility
 {
