@@ -24,4 +24,18 @@ namespace Factories
 
 		return pTile;
 	}
+
+	Integrian2D::GameObject* CreateGrassTileWithRocks(const Integrian2D::Point2f& location) noexcept
+	{
+		using namespace Integrian2D;
+
+		GameObject* pTile{ new GameObject{} };
+
+		pTile->AddComponent(new TileComponent{ pTile, TileMobility::Empty });
+		pTile->AddComponent(new TextureComponent{ pTile, TextureManager::GetInstance()->GetTexture("GrassWithRocks") });
+
+		pTile->pTransform->SetPosition(location);
+
+		return pTile;
+	}
 }

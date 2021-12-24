@@ -10,4 +10,5 @@ namespace Integrian2D
 namespace Factories
 {
 	[[nodiscard]] Integrian2D::GameObject* CreateGrassTileWithSeeds(const Integrian2D::Point2f& location) noexcept;
+	[[nodiscard]] Integrian2D::GameObject* CreateGrassTileWithRocks(const Integrian2D::Point2f& location) noexcept;
 }
