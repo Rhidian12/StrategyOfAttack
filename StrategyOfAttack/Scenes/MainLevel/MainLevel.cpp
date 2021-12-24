@@ -14,7 +14,10 @@ void MainLevel::Start()
 {
 	using namespace Integrian2D;
 
-	TextureManager::GetInstance()->AddTexture("GrassWithSeeds", new Texture{ "Resources/GroundTextures/GrassWithSeeds.jpg" });
+	TextureManager* const pTextureManager{ TextureManager::GetInstance() };
+
+	pTextureManager->AddTexture("GrassWithSeeds", new Texture{ "Resources/GroundTextures/GrassWithSeeds.jpg" });
+	pTextureManager->AddTexture("GrassWithRocks", new Texture{ "Resources/GroundTextures/GrassWithRocks.jpg" });
 
 	AddGameObject("Tile", Factories::CreateGrassTileWithSeeds(Point2f{}));
 }
