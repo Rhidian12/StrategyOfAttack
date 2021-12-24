@@ -16,7 +16,6 @@ public:
 
 	virtual Component* Clone(Integrian2D::GameObject* pOwner) noexcept override;
 
-
 private:
 	TileMobility m_TileMobility;
 };
