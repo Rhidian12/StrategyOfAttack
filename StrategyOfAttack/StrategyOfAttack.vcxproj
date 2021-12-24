@@ -185,12 +185,12 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainLevel\MainLevel.cpp" />
-    <ClCompile Include="Tile\Tile.cpp" />
+    <ClCompile Include="Tile\TileComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainLevel\MainLevel.h" />
     <ClInclude Include="TestScene.h" />
-    <ClInclude Include="Tile\Tile.h" />
+    <ClInclude Include="Tile\TileComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

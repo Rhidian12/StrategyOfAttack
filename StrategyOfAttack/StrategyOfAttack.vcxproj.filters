@@ -21,7 +21,7 @@
     <ClCompile Include="MainLevel\MainLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tile\Tile.cpp">
+    <ClCompile Include="Tile\TileComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClInclude Include="MainLevel\MainLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tile\Tile.h">
+    <ClInclude Include="Tile\TileComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

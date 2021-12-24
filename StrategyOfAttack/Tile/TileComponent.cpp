@@ -1,4 +1,4 @@
-#include "Tile.h"
+#include "TileComponent.h"
 
 TileComponent::TileComponent(Integrian2D::GameObject* const pOwner, const TileMobility tileMobility)
 	: Component{ pOwner }
