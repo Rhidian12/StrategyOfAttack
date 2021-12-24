@@ -21,7 +21,7 @@
     <ClCompile Include="Scenes\MainLevel\MainLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Components\TileComponent\TileComponent.cpp">
+    <ClCompile Include="GameComponents\TileComponent\TileComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Factories\Factories.cpp">
@@ -35,7 +35,7 @@
     <ClInclude Include="Scenes\MainLevel\MainLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Components\TileComponent\TileComponent.h">
+    <ClInclude Include="GameComponents\TileComponent\TileComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Factories\Factories.h">

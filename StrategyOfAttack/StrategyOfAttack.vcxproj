@@ -186,13 +186,13 @@
     <ClCompile Include="Factories\Factories.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Scenes\MainLevel\MainLevel.cpp" />
-    <ClCompile Include="Components\TileComponent\TileComponent.cpp" />
+    <ClCompile Include="GameComponents\TileComponent\TileComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Factories\Factories.h" />
     <ClInclude Include="Scenes\MainLevel\MainLevel.h" />
     <ClInclude Include="TestScene.h" />
-    <ClInclude Include="Components\TileComponent\TileComponent.h" />
+    <ClInclude Include="GameComponents\TileComponent\TileComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
