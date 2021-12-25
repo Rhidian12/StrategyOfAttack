@@ -12,4 +12,5 @@ public:
 	virtual void Start() override;
 
 private:
+	void InitializeLevel() noexcept;
 };

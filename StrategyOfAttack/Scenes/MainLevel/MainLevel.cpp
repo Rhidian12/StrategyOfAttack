@@ -3,6 +3,7 @@
 #include <GameObject/GameObject.h>
 #include <TextureManager/TextureManager.h>
 #include <Texture/Texture.h>
+#include <Core/Core.h>
 
 #include "../../Factories/Factories.h"
 
@@ -19,5 +20,20 @@ void MainLevel::Start()
 	pTextureManager->AddTexture("GrassWithSeeds", new Texture{ "Resources/GroundTextures/GrassWithSeeds.jpg" });
 	pTextureManager->AddTexture("GrassWithRocks", new Texture{ "Resources/GroundTextures/GrassWithRocks.jpg" });
 
-	AddGameObject("Tile", Factories::CreateGrassTileWithSeeds(Point2f{}));
+	InitializeLevel();
+}
+
+void MainLevel::InitializeLevel() noexcept
+{
+	using namespace Integrian2D;
+
+	const TextureManager* const pTextureManager{ TextureManager::GetInstance() };
+	const Texture* const pTexture{ pTextureManager->GetTexture("GrassWithSeeds") };
+	const Core* const pCore{ Core::GetInstance() };
+
+	const float textureWidth{ pTexture->GetWidth() };
+	const float textureHeight{ pTexture->GetHeight() };
+
+	const float amountOfTexturesHorizontally{ pCore->GetWindowWidth() / textureWidth };
+	const float amountOfTexturesVertically{ pCore->GetWindowHeight() / textureHeight };
 }
