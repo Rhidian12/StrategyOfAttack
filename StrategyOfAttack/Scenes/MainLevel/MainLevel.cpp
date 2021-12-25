@@ -38,5 +38,14 @@ void MainLevel::InitializeLevel() noexcept
 	const float amountOfTexturesHorizontally{ Utils::RoundDecimalUp(pCore->GetWindowWidth() / textureWidth) };
 	const float amountOfTexturesVertically{ Utils::RoundDecimalUp(pCore->GetWindowHeight() / textureHeight) };
 
-	
+	for (int x{}; x < amountOfTexturesHorizontally; ++x)
+	{
+		for (int y{}; y < amountOfTexturesVertically; ++y)
+		{
+			if (Utils::RandomNumber(0, 2) == 0)
+				AddGameObject("Tile", Factories::CreateGrassTileWithSeeds(Point2f{ x * textureWidth, y * textureHeight }));
+			else
+				AddGameObject("Tile", Factories::CreateGrassTileWithRocks(Point2f{ x * textureWidth, y * textureHeight }));
+		}
+	}
 }
