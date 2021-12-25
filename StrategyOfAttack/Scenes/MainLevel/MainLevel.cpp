@@ -4,6 +4,7 @@
 #include <TextureManager/TextureManager.h>
 #include <Texture/Texture.h>
 #include <Core/Core.h>
+#include <Utils/Utils.h>
 
 #include "../../Factories/Factories.h"
 
@@ -34,6 +35,8 @@ void MainLevel::InitializeLevel() noexcept
 	const float textureWidth{ pTexture->GetWidth() };
 	const float textureHeight{ pTexture->GetHeight() };
 
-	const float amountOfTexturesHorizontally{ pCore->GetWindowWidth() / textureWidth };
-	const float amountOfTexturesVertically{ pCore->GetWindowHeight() / textureHeight };
+	const float amountOfTexturesHorizontally{ Utils::RoundDecimalUp(pCore->GetWindowWidth() / textureWidth) };
+	const float amountOfTexturesVertically{ Utils::RoundDecimalUp(pCore->GetWindowHeight() / textureHeight) };
+
+	
 }
