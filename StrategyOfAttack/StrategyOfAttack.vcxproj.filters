@@ -30,6 +30,9 @@
     <ClCompile Include="GameComponents\PlayerComponent\PlayerComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameComponents\MapComponent\MapComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestScene.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameComponents\PlayerComponent\PlayerComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\MapComponent\MapComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
