@@ -2,7 +2,7 @@
 
 #include "../TileComponent/TileComponent.h"
 
-MapComponent::MapComponent(Integrian2D::GameObject* const pOwner, const std::vector<TileComponent*> tileComponents)
+MapComponent::MapComponent(Integrian2D::GameObject* const pOwner, const std::vector<TileComponent*>& tileComponents)
 	: Component{ pOwner }
 	, m_TileComponents{ tileComponents }
 {}

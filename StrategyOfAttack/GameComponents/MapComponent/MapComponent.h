@@ -11,7 +11,7 @@ class TileComponent;
 class MapComponent final : public Integrian2D::Component
 {
 public:
-	MapComponent(Integrian2D::GameObject* const pOwner, const std::vector<TileComponent*> tileComponents);
+	MapComponent(Integrian2D::GameObject* const pOwner, const std::vector<TileComponent*>& tileComponents);
 
 	virtual Component* Clone(Integrian2D::GameObject* const pOwner) noexcept override;
 
