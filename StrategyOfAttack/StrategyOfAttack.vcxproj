@@ -194,6 +194,7 @@
     <ClInclude Include="Factories\Factories.h" />
     <ClInclude Include="GameComponents\PlayerComponent\PlayerComponent.h" />
     <ClInclude Include="GameComponents\MapComponent\MapComponent.h" />
+    <ClInclude Include="PlayerDirection\PlayerDirection.h" />
     <ClInclude Include="Scenes\MainLevel\MainLevel.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="GameComponents\TileComponent\TileComponent.h" />
