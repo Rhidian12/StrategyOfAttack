@@ -20,4 +20,6 @@ public:
 
 private:
 	std::vector<TileComponent*> m_TileComponents;
+	float m_TileWidth;
+	float m_TileHeight;
 };
