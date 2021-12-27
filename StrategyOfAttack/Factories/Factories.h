@@ -7,6 +7,7 @@ namespace Integrian2D
 	class GameObject;
 }
 
+class TileComponent;
 class MapComponent;
 
 namespace Factories
