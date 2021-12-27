@@ -7,6 +7,8 @@
 #include <Utils/Utils.h>
 
 #include "../../Factories/Factories.h"
+#include "../../GameComponents/TileComponent/TileComponent.h"
+#include "../../GameComponents/MapComponent/MapComponent.h"
 
 MainLevel::MainLevel(const std::string& sceneName)
 	: Scene{ sceneName.c_str() }
@@ -38,14 +40,25 @@ void MainLevel::InitializeLevel() noexcept
 	const float amountOfTexturesHorizontally{ Utils::RoundDecimalUp(pCore->GetWindowWidth() / textureWidth) };
 	const float amountOfTexturesVertically{ Utils::RoundDecimalUp(pCore->GetWindowHeight() / textureHeight) };
 
+	std::vector<TileComponent*> tiles{};
+
 	for (int x{}; x < amountOfTexturesHorizontally; ++x)
 	{
 		for (int y{}; y < amountOfTexturesVertically; ++y)
 		{
+			GameObject* pTile{};
+
 			if (Utils::RandomNumber(0, 2) == 0)
-				AddGameObject("Tile", Factories::CreateGrassTileWithSeeds(Point2f{ x * textureWidth, y * textureHeight }));
+				pTile = Factories::CreateGrassTileWithSeeds(Point2f{ x * textureWidth, y * textureHeight });
 			else
-				AddGameObject("Tile", Factories::CreateGrassTileWithRocks(Point2f{ x * textureWidth, y * textureHeight }));
+				pTile = Factories::CreateGrassTileWithRocks(Point2f{ x * textureWidth, y * textureHeight });
+
+			tiles.push_back(pTile->GetComponentByType<TileComponent>());
+
+			AddGameObject("Tile", pTile);
 		}
 	}
+
+	AddGameObject("Map", Factories::CreateMap(tiles));
+	AddGameObject("Player", Factories::CreatePlayer(Point2f{}, GetGameObject("Map")->GetComponentByType<MapComponent>()));
 }
