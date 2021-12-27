@@ -2,6 +2,7 @@
 
 #include "../GameComponents/TileComponent/TileComponent.h"
 #include "../GameComponents/PlayerComponent/PlayerComponent.h"
+#include "../GameComponents/MapComponent/MapComponent.h"
 
 #include <GameObject/GameObject.h>
 
@@ -38,6 +39,17 @@ namespace Factories
 		pTile->pTransform->SetPosition(location);
 
 		return pTile;
+	}
+
+	Integrian2D::GameObject* CreateMap(const std::vector<TileComponent*>& tiles) noexcept
+	{
+		using namespace Integrian2D;
+
+		GameObject* pMap{ new GameObject{} };
+
+		pMap->AddComponent(new MapComponent{ pMap, tiles });
+
+		return pMap;
 	}
 
 	Integrian2D::GameObject* CreatePlayer(const Integrian2D::Point2f& location) noexcept
