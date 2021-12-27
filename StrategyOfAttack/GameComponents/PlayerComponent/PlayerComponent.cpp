@@ -28,8 +28,8 @@ void PlayerComponent::Start()
 	pInputManager->AddAxis(InputAxis{ "HorizontalMovement", GameInput{ KeyboardInput::D }, GameInput{ KeyboardInput::A } });
 
 	const Point2f& pos{ m_pOwner->pTransform->GetWorldPosition() };
-	m_pOwner->pTransform->SetPosition(Point2f{ pos.x + m_pMapComponent->GetTileWidth() / 2.f + 10.f,
-		pos.y + m_pMapComponent->GetTileHeight() / 2.f + 10.f });
+	m_pOwner->pTransform->SetPosition(Point2f{ pos.x + m_pMapComponent->GetTileWidth() / 2.f - 10.f,
+		pos.y + m_pMapComponent->GetTileHeight() / 2.f - 10.f });
 }
 
 void PlayerComponent::Update()
