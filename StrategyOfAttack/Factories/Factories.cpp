@@ -52,16 +52,16 @@ namespace Factories
 		return pMap;
 	}
 
-	Integrian2D::GameObject* CreatePlayer(const Integrian2D::Point2f& location) noexcept
+	Integrian2D::GameObject* CreatePlayer(const Integrian2D::Point2f& location, MapComponent* const pMapComponent) noexcept
 	{
 		using namespace Integrian2D;
 
 		GameObject* pPlayer{ new GameObject{} };
 
-		pPlayer->AddComponent(new PlayerComponent{ pPlayer, nullptr });
+		pPlayer->AddComponent(new PlayerComponent{ pPlayer, pMapComponent });
 
 		pPlayer->pTransform->SetPosition(location);
 
-		return nullptr;
+		return pPlayer;
 	}
 }
