@@ -5,6 +5,8 @@
 #include <GameObject/GameObject.h>
 #include <Components/TransformComponent/TransformComponent.h>
 #include <Input/InputManager/InputManager.h>
+/* [TODO] Get rid of this include when Texture is added */
+#include <Renderer/Renderer.h>
 
 PlayerComponent::PlayerComponent(Integrian2D::GameObject* const pOwner, MapComponent* const pMapComponent)
 	: Component{ pOwner }
@@ -59,4 +61,9 @@ void PlayerComponent::Update()
 				m_pOwner->pTransform->SetPosition(Point2f{ m_pOwner->pTransform->GetWorldPosition() + Point2f{ value * m_pMapComponent->GetTileWidth(), 0.f  } });
 		}
 	}
+}
+
+void PlayerComponent::Render() const
+{
+	Integrian2D::Renderer::GetInstance()->RenderFilledRectangle(Integrian2D::Rectf{ m_pOwner->pTransform->GetWorldPosition(), 20.f, 20.f });
 }

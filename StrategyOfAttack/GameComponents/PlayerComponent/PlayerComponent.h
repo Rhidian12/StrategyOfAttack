@@ -15,6 +15,9 @@ public:
 
 	virtual void Update() override;
 
+	/* [TODO] Implement actual texture */
+	virtual void Render() const override;
+
 private:
 	MapComponent* m_pMapComponent;
 };
