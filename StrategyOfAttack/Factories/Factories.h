@@ -2,6 +2,8 @@
 
 #include <Math/TypeDefines.h>
 
+#include <vector>
+
 namespace Integrian2D
 {
 	class GameObject;
