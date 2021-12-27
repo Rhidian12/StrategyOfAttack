@@ -1,6 +1,7 @@
 #include "Factories.h"
 
 #include "../GameComponents/TileComponent/TileComponent.h"
+#include "../GameComponents/PlayerComponent/PlayerComponent.h"
 
 #include <GameObject/GameObject.h>
 
@@ -37,5 +38,18 @@ namespace Factories
 		pTile->pTransform->SetPosition(location);
 
 		return pTile;
+	}
+
+	Integrian2D::GameObject* CreatePlayer(const Integrian2D::Point2f& location) noexcept
+	{
+		using namespace Integrian2D;
+
+		GameObject* pPlayer{ new GameObject{} };
+
+		pPlayer->AddComponent(new PlayerComponent{ pPlayer, nullptr });
+
+		pPlayer->pTransform->SetPosition(location);
+
+		return nullptr;
 	}
 }
