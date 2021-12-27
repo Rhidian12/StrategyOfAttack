@@ -2,10 +2,12 @@
 
 #include <Components/Component/Component.h>
 
+class MapComponent;
+
 class PlayerComponent final : public Integrian2D::Component
 {
 public:
-	PlayerComponent(Integrian2D::GameObject* const pOwner);
+	PlayerComponent(Integrian2D::GameObject* const pOwner, MapComponent* const pMapComponent);
 
 	virtual Component* Clone(Integrian2D::GameObject* const pOwner) noexcept override;
 
@@ -14,4 +16,5 @@ public:
 	virtual void Update() override;
 
 private:
+	MapComponent* m_pMapComponent;
 };

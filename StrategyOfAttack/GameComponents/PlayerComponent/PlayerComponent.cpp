@@ -1,16 +1,19 @@
 #include "PlayerComponent.h"
 
+#include "../MapComponent/MapComponent.h"
+
 #include <GameObject/GameObject.h>
 #include <Components/TransformComponent/TransformComponent.h>
 #include <Input/InputManager/InputManager.h>
 
-PlayerComponent::PlayerComponent(Integrian2D::GameObject* const pOwner)
+PlayerComponent::PlayerComponent(Integrian2D::GameObject* const pOwner, MapComponent* const pMapComponent)
 	: Component{ pOwner }
+	, m_pMapComponent{ pMapComponent }
 {}
 
 Integrian2D::Component* PlayerComponent::Clone(Integrian2D::GameObject* const pOwner) noexcept
 {
-	return new PlayerComponent{ pOwner };
+	return new PlayerComponent{ pOwner, static_cast<MapComponent*>(m_pMapComponent->Clone(pOwner)) };
 }
 
 void PlayerComponent::Start()
@@ -30,8 +33,30 @@ void PlayerComponent::Update()
 	InputManager* const pInputManager{ InputManager::GetInstance() };
 
 	if (const int8_t value{ pInputManager->GetAxis("VerticalMovement") }; value != 0)
-		m_pOwner->pTransform->Translate(Vector2f{ 0.f, value * 50.f });
+	{
+		if (value == 1)
+		{
+			if (m_pMapComponent->IsMovementLegal(m_pMapComponent->GetTileIndex(m_pOwner->pTransform->GetWorldPosition()), PlayerDirection::Up))
+				m_pOwner->pTransform->SetPosition(Point2f{ m_pOwner->pTransform->GetWorldPosition() + Point2f{ 0.f, value * m_pMapComponent->GetTileHeight() } });
+		}
+		else /* it's either 1 or -1 */
+		{
+			if (m_pMapComponent->IsMovementLegal(m_pMapComponent->GetTileIndex(m_pOwner->pTransform->GetWorldPosition()), PlayerDirection::Down))
+				m_pOwner->pTransform->SetPosition(Point2f{ m_pOwner->pTransform->GetWorldPosition() + Point2f{ 0.f, value * m_pMapComponent->GetTileHeight() } });
+		}
+	}
 
 	if (const int8_t value{ pInputManager->GetAxis("HorizontalMovement") }; value != 0)
-		m_pOwner->pTransform->Translate(Vector2f{ value * 50.f, 0.f });
+	{
+		if (value == 1)
+		{
+			if (m_pMapComponent->IsMovementLegal(m_pMapComponent->GetTileIndex(m_pOwner->pTransform->GetWorldPosition()), PlayerDirection::Right))
+				m_pOwner->pTransform->SetPosition(Point2f{ m_pOwner->pTransform->GetWorldPosition() + Point2f{ value * m_pMapComponent->GetTileWidth(), 0.f  } });
+		}
+		else /* it's either 1 or -1 */
+		{
+			if (m_pMapComponent->IsMovementLegal(m_pMapComponent->GetTileIndex(m_pOwner->pTransform->GetWorldPosition()), PlayerDirection::Left))
+				m_pOwner->pTransform->SetPosition(Point2f{ m_pOwner->pTransform->GetWorldPosition() + Point2f{ value * m_pMapComponent->GetTileWidth(), 0.f  } });
+		}
+	}
 }
