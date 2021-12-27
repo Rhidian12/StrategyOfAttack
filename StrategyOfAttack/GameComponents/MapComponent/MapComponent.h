@@ -18,6 +18,9 @@ public:
 	bool IsMovementLegal(const int tileIndex, const PlayerDirection direction) const noexcept;
 	int GetTileIndex(const Integrian2D::Point2f& location) const noexcept;
 
+	float GetTileWidth() const noexcept;
+	float GetTileHeight() const noexcept;
+
 private:
 	std::vector<TileComponent*> m_TileComponents;
 	float m_TileWidth;

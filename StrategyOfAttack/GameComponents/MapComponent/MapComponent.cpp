@@ -81,3 +81,13 @@ int MapComponent::GetTileIndex(const Integrian2D::Point2f& location) const noexc
 	/* return error code */
 	return -1;
 }
+
+float MapComponent::GetTileWidth() const noexcept
+{
+	return m_TileWidth;
+}
+
+float MapComponent::GetTileHeight() const noexcept
+{
+	return m_TileHeight;
+}
